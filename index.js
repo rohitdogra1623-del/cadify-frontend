@@ -1,7 +1,7 @@
 import { useState } from "react";
 
 export default function Home() {
-  const [message, setMessage] = useState("Click to test backend");
+  const [message, setMessage] = useState("Click the button to ping the backend");
 
   const pingBackend = async () => {
     try {
@@ -9,7 +9,7 @@ export default function Home() {
       const data = await res.json();
       setMessage(data.message);
     } catch (err) {
-      setMessage("❌ Connection failed");
+      setMessage("❌ Backend not reachable");
     }
   };
 
@@ -20,8 +20,8 @@ export default function Home() {
       flexDirection: "column",
       alignItems: "center",
       justifyContent: "center",
-      background: "#fff8f0",
-      fontFamily: "sans-serif"
+      fontFamily: "sans-serif",
+      background: "#fff8f0"
     }}>
       <h1>Cadify Prototype v1</h1>
       <button
